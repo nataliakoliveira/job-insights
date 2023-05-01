@@ -45,5 +45,5 @@ def filter_by_salary_range(
             if matches_salary_range(job, salary):
                 filtered_jobs.append(job)
         except ValueError:
-            pass
+            print("Invalid salary range")
     return filtered_jobs
