@@ -10,7 +10,7 @@ def read(path: str) -> List[Dict]:
         new_list = []
         for row in dictionary_list:
             new_list.append(row)
-        return new_list
+        return list(new_list)
 
 
 def get_unique_job_types(path: str) -> List[str]:
