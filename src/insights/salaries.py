@@ -8,7 +8,7 @@ def get_max_salary(path: str) -> int:
     for max_val in salary:
         salary_type = max_val.get("max_salary")
         if salary_type != "" and salary_type.isdigit():
-           unique_salary.add(int(salary_type))
+            unique_salary.add(int(salary_type))
     return max(unique_salary)
 
 
@@ -20,6 +20,7 @@ def get_min_salary(path: str) -> int:
         if salary_type != "" and salary_type.isdigit():
             unique_salary.add(int(salary_type))
     return min(unique_salary)
+
 
 def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
     """Checks if a given salary is in the salary range of a given job
