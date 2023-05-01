@@ -3,32 +3,23 @@ from src.insights.jobs import read
 
 
 def get_max_salary(path: str) -> int:
-    salary = read(path)
-    unique_salary = set()
-    for salaryes in salary:
-        salary_type = salaryes.get("max_salary")
-        if salary_type != "" and salary_type.isdigit():  # isdigit() -> verifica se a string é um número
-            unique_salary.add(int(salary_type))
-    return max(unique_salary)
+        salary = read(path)
+        unique_salary = set()
+        for job in salary:
+            salary_type = job.get("max_salary")
+            if salary_type != "" and salary_type.isdigit():
+                unique_salary.add(int(salary_type))
+        return max(unique_salary)
 
 
 def get_min_salary(path: str) -> int:
-    """Get the minimum salary of all jobs
-
-    Must call `read`
-
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    int
-        The minimum salary paid out of all job opportunities
-    """
-    raise NotImplementedError
-
+        salary = read(path)
+        unique_salary = set()
+        for job in salary:
+            salary_type = job.get("min_salary")
+            if salary_type != "" and salary_type.isdigit():
+                unique_salary.add(int(salary_type))
+        return min(unique_salary)
 
 def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
     """Checks if a given salary is in the salary range of a given job
